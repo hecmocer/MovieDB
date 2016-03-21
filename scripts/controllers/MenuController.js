@@ -21,5 +21,11 @@ angular
                 return "";
             }
         }
+
+        // Scope watchers
+        $scope.$watch("model.selectedItem", function(newValue, oldValue){
+            // Emitimos evento hacia arriba con objetivo AppController
+            $scope.$emit("OnMenuChange", newValue);
+        });
     }]
 );
