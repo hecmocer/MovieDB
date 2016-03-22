@@ -8,8 +8,8 @@ angular.module('moviedb').controller('MovieListController',
         // Controller start
         MovieService.getMovies().then(
             // Promesa resuelta
-            function(data){
-                $scope.model = data;
+            function(response){
+                $scope.model = response.data;
                 if($scope.model.length == 0){
                     $scope.uiState = 'blank';
                 } else {
@@ -17,8 +17,8 @@ angular.module('moviedb').controller('MovieListController',
                 }
             },
             // Promesa rechazada
-            function(data){
-                $log.error('Error', data);
+            function(response){
+                $log.error('Error', response);
                 $scope.uiState = 'error';
             }
         );
