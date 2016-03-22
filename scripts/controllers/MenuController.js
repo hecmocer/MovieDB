@@ -2,17 +2,12 @@
 angular
 .module("moviedb")
 .controller("MenuController",
-    ["$scope", function($scope){
+    ["$scope", "$location", function($scope, $location){
 
         // Scope init
         $scope.model = {
             selectedItem: "movies"
         };
-
-        // Scope methods
-        $scope.setSelectedItem = function(item){
-            $scope.model.selectedItem = item;
-        }
 
         $scope.getClassForItem = function(item){
             if($scope.model.selectedItem == item){
@@ -22,10 +17,9 @@ angular
             }
         }
 
-        // Scope watchers
-        $scope.$watch("model.selectedItem", function(newValue, oldValue){
-            // Emitimos evento hacia arriba con objetivo AppController
-            $scope.$emit("OnMenuChange", newValue);
+        // Scope event listeners
+        $scope.$on("$locationChangeSuccess", function(evt, currentRoute){
+            $scope.model.selectedItem = $location.path();
         });
     }]
 );

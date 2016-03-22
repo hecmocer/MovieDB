@@ -21,6 +21,5 @@ angular
         $scope.$on("$locationChangeSuccess", function(evt, currentRoute){
             $scope.model.title = controller.titles[$location.path()] || "404 Not Found";
         });
-
     }]
 );

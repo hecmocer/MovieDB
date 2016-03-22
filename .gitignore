@@ -6,3 +6,8 @@ node_modules/
 
 # Codigo generado
 dist/
+
+# Sparrest
+db/
+server.py
+sparrest-master/
