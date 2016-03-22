@@ -3,3 +3,6 @@ bower_components/
 
 # Dependencias de npm
 node_modules/
+
+# Codigo generado
+dist/
