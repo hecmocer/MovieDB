@@ -13,6 +13,8 @@ module.exports = function (grunt) {
             },
             app: {
                 src: [
+                    // Cargamos los paquetes instalados con bower y el codigo fuente de la aplicacion
+                    'bower_components/moment/moment.js',
                     'bower_components/angular/angular.js',
                     'bower_components/angular-route/angular-route.min.js',
                     'scripts/**/*.js',
