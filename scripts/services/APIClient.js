@@ -35,7 +35,7 @@ angular.module("moviedb").service("APIClient",
             return this.apiRequest(apiPaths.series);
         };
 
-        this.getSerie = function(movieId){
+        this.getSerie = function(serieId){
             var url = URL.resolve(apiPaths.serieDetail, { id: serieId});
             return this.apiRequest(url);
         }
