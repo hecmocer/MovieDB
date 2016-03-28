@@ -4,7 +4,7 @@ angular.module("moviedb").directive("mediaItemList", function(){
         templateUrl: "views/mediaItemList.html",
         scope: {
             model: "=items",
-            getDetailUrl: "="
+            getDetailUrl: "&"
         }
     };
 });
