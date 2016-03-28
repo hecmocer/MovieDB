@@ -1,5 +1,5 @@
 // Definimos el módulo
-angular.module("moviedb", ["ngRoute", "URL"]).config(
+angular.module("moviedb", ["ngRoute", "ngSanitize", "URL"]).config(
     ["$routeProvider", "paths", function($routeProvider, paths){
 
         // Configuro las URLs de la aplicación
@@ -12,7 +12,7 @@ angular.module("moviedb", ["ngRoute", "URL"]).config(
         }).when(paths.people, {
             templateUrl: 'views/PeopleList.html'
         }).when(paths.home, {
-            templateUrl: 'views/MoviesList.html'
+            redirectTo: paths.movies
         }).otherwise({
             templateUrl: 'views/404.html'
         })    }]);
