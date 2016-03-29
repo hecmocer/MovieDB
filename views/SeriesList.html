@@ -13,5 +13,5 @@
     <div ng-include="'views/ProgressBar.html'" ng-show="uiState=='loading'">
     </div>
 
-    <media-item-list items="model" get-detail-url="getSerieDetailURL(stuff)" ng-show="uiState=='ideal'"></media-item-list>
+    <media-item-list items="model" get-detail-url="getSerieDetailURL(stuff)" ng-show="uiState=='ideal'" date-mode="year"></media-item-list>
 </div>

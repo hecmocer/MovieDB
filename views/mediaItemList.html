@@ -6,7 +6,7 @@
             <th>Year</th>
             <th>Rating</th>
             <th>
-                <input type="search" ng-model="query.title" class="form-control" placeholder="Search...">
+                <input type="search" ng-model="query.title" class="form-control input-sm" placeholder="Search...">
             </th>
         </tr>
     </thead>
@@ -19,9 +19,14 @@
                 {{::item.title}}
             </td>
             <td>
-                {{::item.release_date | date:"dd/MM/yyyy"}}
-                <br>
-                ({{::item.release_date | ago}})
+                <span ng-if="dateMode != 'year'">
+                    {{::item.release_date | date:"dd/MM/yyyy"}}
+                    <br>
+                    ({{::item.release_date | ago}})
+                </span>
+                <span ng-if="dateMode == 'year'">
+                    {{::item.release_date }}
+                </span>
             </td>
             <td>
                 {{::item.rating}}
